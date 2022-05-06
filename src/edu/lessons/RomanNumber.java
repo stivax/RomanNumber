@@ -11,7 +11,7 @@ public class RomanNumber {
 
     }
 
-    public static int romanToInt(String s) {
+    private static int romanToInt(String s) {
         String[] roman = s.split("");
         int numberRoman = 0;
         String prev = "";
@@ -33,7 +33,7 @@ public class RomanNumber {
 
     enum RomanSymbol {
 
-        I(1), V(5), X(10), L(50), C(100), D(500), M(1000), Z(0);
+        I(1), V(5), X(10), L(50), C(100), D(500), M(1000);
 
         private int number;
 
