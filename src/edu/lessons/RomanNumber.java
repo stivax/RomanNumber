@@ -5,9 +5,17 @@ import java.util.Scanner;
 public class RomanNumber {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Введите римское число:");
-        String rome = in.nextLine();
-        System.out.println("Arabian number " + romanToInt(rome));
+        boolean continueLoop = true;
+        do {
+            try {
+                System.out.println("Введите римское число:");
+                String rome = in.nextLine();
+                System.out.println("Arabian number " + romanToInt(rome));
+                continueLoop = false;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Пожалуйста, введите корректное римское число!");
+            }
+        } while (continueLoop);
 
     }
 
@@ -31,20 +39,20 @@ public class RomanNumber {
     }
 }
 
-    enum RomanSymbol {
+enum RomanSymbol {
 
-        I(1), V(5), X(10), L(50), C(100), D(500), M(1000);
+    I(1), V(5), X(10), L(50), C(100), D(500), M(1000);
 
-        private int number;
+    private int number;
 
-        RomanSymbol(int number) {
+    RomanSymbol(int number) {
 
-            this.number = number;
-        }
-
-        public int getNumber() {
-
-            return number;
-        }
-
+        this.number = number;
     }
+
+    public int getNumber() {
+
+        return number;
+    }
+
+}
